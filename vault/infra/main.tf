@@ -20,9 +20,9 @@ resource "vault_kv_secret_v2" "example" {
 }
 
 data "vault_kv_secret_v2" "creds" {
-  namespace = admin
-  mount = example
-  name = unsecret
+  namespace = "admin"
+  mount = "example"
+  name = "unsecret"
 
 }
 
