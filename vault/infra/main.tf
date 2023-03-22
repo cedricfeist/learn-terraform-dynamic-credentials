@@ -19,12 +19,13 @@ resource "vault_kv_secret_v2" "example" {
   )
 }
 
-data "vault_kv_secret_v2" "awscreds" {
+data "vault_kv_secret_v2" "creds" {
+  namespace = admin
   mount = example
   name = unsecret
 
 }
 
 output "secret" {
-  value = data.awscreds.name
+  value = data.creds.name
 }
