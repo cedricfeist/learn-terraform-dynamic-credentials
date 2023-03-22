@@ -29,7 +29,8 @@ provider "aws" {
 resource "aws_instance" "instance" {
   instance_type = "t3.micro"
   ami = "ami-0110d1b5b1cdd8780"
-  name = data.vault_kv_secret_v2.example.data["creds"]
+  tags = {name = data.vault_kv_secret_v2.example.data["creds"]}
+  
 }
 
 #locals  {  
