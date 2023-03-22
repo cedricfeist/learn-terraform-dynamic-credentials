@@ -16,5 +16,6 @@ output "data" {
 }
 
 locals  {
-  gcp_creds = data.vault_kv_secret_v2.creds.data.value["creds"]  
+  
+  gcp_creds = data.vault_kv_secret_v2.creds.data.value 
 }
