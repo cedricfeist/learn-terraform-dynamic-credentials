@@ -10,6 +10,9 @@ data "vault_kv_secret_v2" "creds" {
   name = "unsecret"
 }
 
-output "aws_cred_demo" {
-  value = data.vault_kv_secret_v2.creds.name
+output "data" {
+  value = data.vault_kv_secret_v2.creds.data
+}
+output "data_json" {
+  value = data.vault_kv_secret_v2.creds.data_json
 }
