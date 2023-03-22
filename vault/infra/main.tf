@@ -11,5 +11,5 @@ data "vault_kv_secret_v2" "creds" {
 }
 
 output "aws_cred_demo" {
-  value = data.vault_kv_secret_v2.creds.name.creds
+  value = data.vault_kv_secret_v2.creds.name
 }
