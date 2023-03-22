@@ -1,6 +1,6 @@
 variable "jwt_backend_path" {
   type        = string
-  default     = "jwt"
+  default     = "jwt_tf"
   description = "The path at which you'd like to mount the jwt auth backend in Vault"
 }
 

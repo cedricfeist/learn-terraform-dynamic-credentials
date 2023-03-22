@@ -14,7 +14,17 @@ resource "vault_kv_secret_v2" "example" {
   delete_all_versions = true
   data_json = jsonencode(
     {
-      foo = "bar"
+      creds = "awscreds"
     }
   )
+}
+
+data "vault_kv_secret_v2" "awscreds" {
+  mount = example
+  name = unsecret
+
+}
+
+output "secret" {
+  value = data.awscreds.name
 }
