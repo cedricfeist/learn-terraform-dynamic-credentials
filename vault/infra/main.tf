@@ -27,5 +27,5 @@ data "vault_kv_secret_v2" "creds" {
 }
 
 output "secret" {
-  value = data.creds.name
+  value = data.vault_kv_secret_v2.creds
 }
