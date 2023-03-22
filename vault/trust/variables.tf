@@ -1,6 +1,6 @@
 variable "jwt_backend_path" {
   type        = string
-  default     = "jwt"
+  default     = "jwt_tf"
   description = "The path at which you'd like to mount the jwt auth backend in Vault"
 }
 
@@ -19,6 +19,7 @@ variable "tfc_hostname" {
 variable "tfc_organization_name" {
   type        = string
   description = "The name of your Terraform Cloud organization"
+  default = "cedric"
 }
 
 variable "tfc_project_name" {
@@ -29,6 +30,6 @@ variable "tfc_project_name" {
 
 variable "tfc_workspace_name" {
   type        = string
-  default     = "my-vault-workspace"
+  default     = "vault-backed-workspace"
   description = "The name of the workspace that you'd like to create and connect to Vault"
 }
