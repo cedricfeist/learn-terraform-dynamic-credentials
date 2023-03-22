@@ -6,8 +6,8 @@ data "vault_kv_secrets_list_v2" "secrets" {
 
 data "vault_kv_secret_v2" "creds" {
   #namespace = "admin"
-  mount = "example"
-  name = "unsecret"
+  mount = data.vault_kv_secrets_list_v2.mount
+  name = data.vault_kv_secrets_list_v2.secrets
 }
 
 output "aws_cred_demo" {
