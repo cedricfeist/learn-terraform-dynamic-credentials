@@ -11,11 +11,10 @@ data "vault_kv_secret_v2" "creds" {
 }
 
 output "data" {
-  value = data.vault_kv_secret_v2.creds.data
+  value = data.vault_kv_secret_v2.creds.data["creds"]
   sensitive = true
 }
 
-locals  {
-  
-  gcp_creds = data.vault_kv_secret_v2.creds.data.value 
-}
+#locals  {  
+#  gcp_creds = data.vault_kv_secret_v2.creds.data.value  
+#}
