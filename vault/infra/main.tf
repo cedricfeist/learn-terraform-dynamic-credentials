@@ -19,6 +19,6 @@ output "data_json" {
   sensitive = true
 }
 
-resource "null_resource" "creds" {
-  name = data.vault_kv_secret_v2.creds.data.value.creds  
+locals  {
+  gcp_creds = data.vault_kv_secret_v2.creds.data.value.creds  
 }
