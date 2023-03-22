@@ -12,7 +12,9 @@ data "vault_kv_secret_v2" "creds" {
 
 output "data" {
   value = data.vault_kv_secret_v2.creds.data
+  sensitive = true
 }
 output "data_json" {
   value = data.vault_kv_secret_v2.creds.data_json
+  sensitive = true
 }
