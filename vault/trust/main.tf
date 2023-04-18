@@ -57,5 +57,11 @@ path "sys/mounts/example" {
 path "example/*" {
   capabilities = ["create", "read", "update", "patch", "delete", "list"]
 }
+
+path "aws/*" {
+  capabilities = ["create", "read", "update", "patch", "delete", "list"]
+}
+
 EOT
 }
+
