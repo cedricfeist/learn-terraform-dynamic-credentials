@@ -36,6 +36,6 @@ resource "aws_instance" "instance" {
 
 data "vault_aws_access_credentials" "awsdynamic" {
   backend = "aws"
-  role = "tfc-role" 
+  role = "aws-role" 
 }
 
