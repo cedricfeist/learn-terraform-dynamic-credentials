@@ -22,10 +22,10 @@ data "vault_kv_secret_v2" "creds" {
 
 provider "aws" {
   region     = "eu-central-1"
-  #access_key = data.vault_kv_secret_v2.creds.data["AWS_ACCESS_KEY"]
-  #secret_key = data.vault_kv_secret_v2.creds.data["AWS_SECRET_ACCESS_KEY"]
-  access_key = data.vault_aws_access_credentials.awsdynamic.access_key
-  secret_key = data.vault_aws_access_credentials.awsdynamic.secret_key
+  access_key = data.vault_kv_secret_v2.creds.data["AWS_ACCESS_KEY"]
+  secret_key = data.vault_kv_secret_v2.creds.data["AWS_SECRET_ACCESS_KEY"]
+  #access_key = data.vault_aws_access_credentials.awsdynamic.access_key
+  #secret_key = data.vault_aws_access_credentials.awsdynamic.secret_key
 }
 
 resource "aws_instance" "instance" {
@@ -36,5 +36,6 @@ resource "aws_instance" "instance" {
 
 data "vault_aws_access_credentials" "awsdynamic" {
   backend = "aws"
-  role = "aws-role" 
+  role = "tfc-role" 
 }
+
