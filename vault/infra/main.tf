@@ -18,7 +18,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "instance" {
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   ami = "ami-0110d1b5b1cdd8780"
   count = 1
 }
@@ -26,5 +26,6 @@ resource "aws_instance" "instance" {
 data "vault_aws_access_credentials" "awsdynamic" {
   backend = "aws"
   role = "aws-role" 
+  
 }
 
