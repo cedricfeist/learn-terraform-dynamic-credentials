@@ -28,7 +28,7 @@ resource "aws_instance" "instance" {
   ami = "ami-0110d1b5b1cdd8780"
   count = 1
   tags = {
-    Name = var.instance_name
+    Name = "instance_name"
   }
 }
 
