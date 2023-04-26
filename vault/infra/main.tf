@@ -4,17 +4,6 @@ data "vault_kv_secrets_list_v2" "secrets" {
   mount = "example"
 }
 
-data "vault_kv_secret_v2" "example" {
-  #namespace = "admin"
-  mount = "example"
-  name = "unsecret"
-}
-
-output "data" {
-  value = data.vault_kv_secret_v2.example.data["creds"]
-  sensitive = true
-}
-
 data "vault_kv_secret_v2" "creds" {
   mount = "example"
   name = "aws"
@@ -31,7 +20,7 @@ provider "aws" {
 resource "aws_instance" "instance" {
   instance_type = "t3.micro"
   ami = "ami-0110d1b5b1cdd8780"
-  
+  count = 20
 }
 
 data "vault_aws_access_credentials" "awsdynamic" {
