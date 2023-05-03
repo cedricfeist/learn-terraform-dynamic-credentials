@@ -4,10 +4,10 @@ provider "vault" {}
 #  mount = "example"
 #}
 
-data "vault_kv_secret_v2" "creds" {
-  mount = "example"
-  name = "aws"
-}
+#data "vault_kv_secret_v2" "creds" {
+#  mount = "example"
+#  name = "aws"
+#}
 
 #data "vault_aws_access_credentials" "awsdynamic" {
 #  backend = "aws"
